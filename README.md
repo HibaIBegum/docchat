@@ -1,3 +1,13 @@
+---
+title: DocChat
+emoji: 📄
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # 📄 DocChat — Chat with Any Document
 
 An AI-powered document Q&A app built with Streamlit, ChromaDB, and Groq.
@@ -13,18 +23,3 @@ An AI-powered document Q&A app built with Streamlit, ChromaDB, and Groq.
 - PyMuPDF (fitz) — PDF reading
 - ChromaDB — vector storage and semantic search
 - Groq (LLaMA 3.1) — answer generation
-- Python-dotenv — environment management
-
-## Setup
-
-1. Clone the repo
-2. Create a virtual environment
-```bash
-   python3 -m venv venv
-   source venv/bin/activate
-```
-3. Install dependencies
-```bash
-   pip install -r requirements.txt
-```
-4. Create a `.env` file and add your Groq API key
