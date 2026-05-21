@@ -51,3 +51,10 @@ An AI-powered document Q&A app built with Streamlit, ChromaDB, and Groq.
    pip install -r requirements.txt
 ```
 4. Create a `.env` file and add your Groq API key
+5. Run the app
+```bash
+   streamlit run app.py
+```
+
+## Author
+Hiba Iqbal Begum — [LinkedIn](https://www.linkedin.com/in/hibabegum/)
