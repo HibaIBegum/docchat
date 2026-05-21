@@ -1,5 +1,6 @@
 streamlit
 pymupdf
-chromadb==0.4.24
+chromadb==0.5.0
+numpy==1.26.4
 groq
 python-dotenv
