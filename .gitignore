@@ -1,4 +1,8 @@
 .env
-__pyacache__/
+__pycache__/
 *.pyc
 .DS_Store
+.venv/
+*.PDF
+*.pdf
+chroma_db/

@@ -14,16 +14,22 @@ def extract_chunks(pdf_file):
     doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
     chunk_size= smart_chunk_size(len(doc))
     overlap= int(chunk_size *0.2)
-    full_text = ""
-
-    for page in doc:
-        full_text +=page.get_text()
-    chunks=[]
-    i=0
-    while i<len(full_text):
-        chunk = full_text[i:i+chunk_size].strip()
-        if chunk:
-            chunks.append(chunk)
-        i += chunk_size - overlap
-    return chunks
+    #full_text = ""
+    chunks =[]
+    metadatas=[]
+    chunk_index=0
+    for page_num, page in enumerate(doc):
+        full_text =page.get_text()
+        i=0
+        while i<len(full_text):
+            chunk = full_text[i:i+chunk_size].strip()
+            if chunk:
+                chunks.append(chunk)
+                metadatas.append({ 
+                    "page": page_num + 1,
+                    "chunk_index": chunk_index
+                })
+                chunk_index += 1
+            i += chunk_size - overlap
+    return chunks, metadatas
 
