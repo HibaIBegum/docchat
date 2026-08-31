@@ -6,7 +6,7 @@ load_dotenv()
 
 def ask(collection, question):
     try:
-        results = collection.query(query_texts=[question],n_results=2)
+        results = collection.query(query_texts=[question],n_results=3)
         chunks=results["documents"][0]
         distances=results["distances"][0]
         metadatas=results["metadatas"][0]
@@ -19,7 +19,7 @@ def ask(collection, question):
         for attempt in range(3):
             try:
                 response = groq_client.chat.completions.create(
-                model="qwen/qwen3-32b",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content":f"""Answer using ONLY the context below.
                                 Do not add anything not in the context.
@@ -46,5 +46,6 @@ def ask(collection, question):
                 else:
                     return "Request timed out. Please try again.",None
     except Exception as e:
+        print(f"REAL ERROR: {e}");
         return "Smoething went wrong. Please try again.",None
     

@@ -25,7 +25,7 @@ An AI-powered document Q&A app built with Streamlit, ChromaDB, and Groq.
 - Streamlit — UI
 - PyMuPDF (fitz) — PDF reading and text extraction
 - ChromaDB — vector storage and semantic search
-- Groq (LLaMA 3.1) — answer generation
+- Groq — answer generation (OpenAI open model `openai/gpt-oss-20b`)
 - Python-dotenv — environment management
 
 ## How It Works
